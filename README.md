@@ -1,2 +1,2 @@
-# auto-hotkey
-AutoHotkey Script
+# AutoHotkey Windows Script
+
