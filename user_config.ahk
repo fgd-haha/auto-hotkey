@@ -19,10 +19,8 @@ CapsLock & Numpad7::switchDesktopByNumber(7)
 CapsLock & Numpad8::switchDesktopByNumber(8)
 CapsLock & Numpad9::switchDesktopByNumber(9)
 
-CapsLock & n::switchDesktopToRight()
-CapsLock & p::switchDesktopToLeft()
-CapsLock & s::switchDesktopToRight()
-CapsLock & a::switchDesktopToLeft()
+CapsLock & Right::switchDesktopToRight()
+CapsLock & Left::switchDesktopToLeft()
 CapsLock & tab::switchDesktopToLastOpened()
 
 CapsLock & c::createVirtualDesktop()
@@ -38,8 +36,9 @@ CapsLock & u::MoveCurrentWindowToDesktop(7)
 CapsLock & i::MoveCurrentWindowToDesktop(8)
 CapsLock & o::MoveCurrentWindowToDesktop(9)
 
-CapsLock & Right::MoveCurrentWindowToRightDesktop()
-CapsLock & Left::MoveCurrentWindowToLeftDesktop()
+CapsLock & j::MoveCurrentWindowToLeftDesktop()
+CapsLock & k::MoveCurrentWindowToRightDesktop()
+
 
 
 ExtractAppTitle(FullTitle)
