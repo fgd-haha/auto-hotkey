@@ -117,6 +117,28 @@ Return
 !d::
 DetectHiddenWindows, On
 SetTitleMatchMode, 2
+WinGet, winId, ID, 滴答 ahk_exe TickTick.exe
+If not WinExist("ahk_id " winId)
+{
+	Run, "C:\Program Files (x86)\滴答清单\TickTick.exe"
+}
+else
+{
+	IfWinNotActive ahk_id %winId%
+	{
+		WinActivate ahk_id %winId%
+	}
+	Else
+	{
+		WinMinimize ahk_id %winId%
+	}
+}
+Return
+
+
+!g::
+DetectHiddenWindows, On
+SetTitleMatchMode, 2
 WinGet, winId, ID, Administrator ahk_exe datagrip64.exe ahk_class SunAwtFrame
 If not WinExist("ahk_id " winId)
 {
@@ -230,7 +252,7 @@ WinGet, winId, ID, ahk_exe WindowsTerminal.exe ahk_class CASCADIA_HOSTING_WINDOW
 ; MsgBox, winId is "%winId%"
 If not WinExist("ahk_id " winId)
 {
-	Run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.11.2921.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+	Run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.12.10733.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
 }
 else
 {
