@@ -114,26 +114,27 @@ Else
 Return
 
 
-!d::
-DetectHiddenWindows, On
-SetTitleMatchMode, 2
-WinGet, winId, ID, 滴答 ahk_exe TickTick.exe
-If not WinExist("ahk_id " winId)
-{
-	Run, "C:\Program Files (x86)\滴答清单\TickTick.exe"
-}
-else
-{
-	IfWinNotActive ahk_id %winId%
-	{
-		WinActivate ahk_id %winId%
-	}
-	Else
-	{
-		WinMinimize ahk_id %winId%
-	}
-}
-Return
+; !d::
+; DetectHiddenWindows, On
+; SetTitleMatchMode, 2
+; WinGetTitle, winId, ID, ahk_exe TickTick.exe 
+; MsgBox %winId%
+; If not WinExist("ahk_id " winId)
+; {
+; 	Run, "C:\Users\fgdfr\AppData\Roaming\Microsoft\Windows\Start Menu\didaqingdan.lnk"
+; }
+; else
+; {
+; 	IfWinNotActive ahk_id %winId%
+; 	{
+; 		WinActivate ahk_id %winId%
+; 	}
+; 	Else
+; 	{
+; 		WinMinimize ahk_id %winId%
+; 	}
+; }
+; Return
 
 
 !g::
@@ -182,7 +183,9 @@ Return
 
 !n::
 DetectHiddenWindows, On
-IfWinNotExist OneNote
+SetTitleMatchMode, 2
+WinGet, winId, ID, ahk_exe ONENOTE.EXE
+If not WinExist("ahk_id " winId)
 {
 	Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneNote 2016.lnk
 }
@@ -280,6 +283,7 @@ Else
 	IfWinNotActive .*Visual Studio Code
 	{
 		WinActivate .*Visual Studio Code
+		WinActivateBottom .*Visual Studio Code
 	}
 	Else
 	{
