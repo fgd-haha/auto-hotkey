@@ -315,19 +315,22 @@ Return
 
 !y::
 DetectHiddenWindows, On
-IfWinNotExist, ahk_class OrpheusBrowserHost
+SetTitleMatchMode, 2
+WinGet, winId, ID, QQ音乐 ahk_exe QQMusic.exe ahk_class TXGuiFoundation
+; MsgBox, winId is "%winId%"
+If not WinExist("ahk_id " winId)
 {
-	Run, C:\Users\fgdfr\Software\CloudMusic\cloudmusic.exe
+	Run, "C:\Program Files (x86)\Tencent\QQMusic\QQMusic.exe"
 }
-Else
+else
 {
-	IfWinNotActive, ahk_class OrpheusBrowserHost
+	IfWinNotActive ahk_id %winId%
 	{
-		WinActivate, ahk_class OrpheusBrowserHost
+		WinActivate ahk_id %winId%
 	}
 	Else
 	{
-		WinMinimize, ahk_class OrpheusBrowserHost
+		WinMinimize ahk_id %winId%
 	}
 }
 Return
