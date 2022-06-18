@@ -98,7 +98,8 @@ DetectHiddenWindows, On
 SetTitleMatchMode RegEx
 IfWinNotExist .*Chrome
 {
-	Run, C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+	Run, C:\Program Files\Google\Chrome\Application\chrome.exe
+	
 }
 Else
 {
