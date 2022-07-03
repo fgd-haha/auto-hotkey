@@ -298,7 +298,7 @@ Return
 DetectHiddenWindows, On
 IfWinNotExist, ahk_class WeChatMainWndForPC
 {
-	Run, C:\Users\fgdfr\Software\WeChat\WeChat.exe
+	Run, "C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"
 }
 Else
 {
