@@ -188,7 +188,7 @@ SetTitleMatchMode, 2
 WinGet, winId, ID, ahk_exe ONENOTE.EXE
 If not WinExist("ahk_id " winId)
 {
-	Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\OneNote 2016.lnk
+	Run, "C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE"
 }
 Else
 {
@@ -321,7 +321,7 @@ WinGet, winId, ID, QQ音乐 ahk_exe QQMusic.exe ahk_class TXGuiFoundation
 ; MsgBox, winId is "%winId%"
 If not WinExist("ahk_id " winId)
 {
-	Run, "C:\Program Files (x86)\Tencent\QQMusic\QQMusic.exe"
+	Run, "C:\Program Files (x86)\Tencent\QQMusic\QQMusic1902.11.41.57\QQMusic.exe"
 }
 else
 {
