@@ -249,6 +249,29 @@ else
 }
 Return
 
+; !t::
+; DetectHiddenWindows, On
+; SetTitleMatchMode, 2
+; WinGet, winId, ID, ahk_exe WindowsTerminal.exe ahk_class CASCADIA_HOSTING_WINDOW_CLASS
+; ; MsgBox, winId is "%winId%"
+; If not WinExist("ahk_id " winId)
+; {
+
+; 	Run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.18.3181.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+; }
+; else
+; {
+; 	IfWinNotActive ahk_id %winId%
+; 	{
+; 		WinActivate ahk_id %winId%
+; 	}
+; 	Else
+; 	{
+; 		WinMinimize ahk_id %winId%
+; 	}
+; }
+; Return
+
 !t::
 DetectHiddenWindows, On
 SetTitleMatchMode, 2
@@ -256,7 +279,7 @@ WinGet, winId, ID, ahk_exe WindowsTerminal.exe ahk_class CASCADIA_HOSTING_WINDOW
 ; MsgBox, winId is "%winId%"
 If not WinExist("ahk_id " winId)
 {
-	Run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.12.10733.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+	Run, wt
 }
 else
 {
@@ -270,6 +293,7 @@ else
 	}
 }
 Return
+
 
 
 !v::
@@ -314,24 +338,24 @@ Else
 Return
 
 
-!y::
-DetectHiddenWindows, On
-SetTitleMatchMode, 2
-WinGet, winId, ID, QQ音乐 ahk_exe QQMusic.exe ahk_class TXGuiFoundation
-; MsgBox, winId is "%winId%"
-If not WinExist("ahk_id " winId)
-{
-	Run, "C:\Program Files (x86)\Tencent\QQMusic\QQMusic1902.11.41.57\QQMusic.exe"
-}
-else
-{
-	IfWinNotActive ahk_id %winId%
-	{
-		WinActivate ahk_id %winId%
-	}
-	Else
-	{
-		WinMinimize ahk_id %winId%
-	}
-}
-Return
+; !y::
+; DetectHiddenWindows, On
+; SetTitleMatchMode, 2
+; WinGet, winId, ID, QQ音乐 ahk_exe QQMusic.exe ahk_class TXGuiFoundation
+; ; MsgBox, winId is "%winId%"
+; If not WinExist("ahk_id " winId)
+; {
+; 	Run, "C:\Program Files (x86)\Tencent\QQMusic\QQMusic1902.11.41.57\QQMusic.exe"
+; }
+; else
+; {
+; 	IfWinNotActive ahk_id %winId%
+; 	{
+; 		WinActivate ahk_id %winId%
+; 	}
+; 	Else
+; 	{
+; 		WinMinimize ahk_id %winId%
+; 	}
+; }
+; Return
